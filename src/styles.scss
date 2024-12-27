@@ -1,0 +1,402 @@
+body{
+    max-width: 500px;
+    margin : 0 auto;
+}
+
+#root{
+    background-color: rgba(186, 0, 40, 1);
+    min-height : 105vh;
+    --border-color : rgba(57, 18, 36, 1);
+    --select-color : rgba(0, 21, 105, 0.9);
+    --screen-color : rgba(58, 188, 231, 1);
+    --shadow-color : rgba(41, 78, 97);
+};
+
+.topPokedex{
+    padding : 15px 20px 0px 20px;
+    .upScreen{
+        height : 150px;
+        background-color: red;
+        border-radius : 2px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        position : relative;
+        clip-path: polygon(0% 100%, 40% 100%, 64% 40%, 100% 40%, 100% 0%, 0% 0%);
+        .upScreenButton{
+            height : 145px;
+            width : 145px;
+            position : relative;
+            .upScreenButtonOne,.upScreenButtonTwo,.upScreenButtonThree,.upScreenButtonFour,.upScreenButtonFive{
+                position : absolute;
+                top : 50%;
+                left : 50%;
+                transform : translate(-50%, -50%);
+                border-radius: 50px;
+            }
+            .upScreenButtonOne{
+                height : 80px;
+                width : 80px;
+                background-color: white;
+            }
+            .upScreenButtonTwo{
+                height : 80px;
+                width : 80px;
+                background-color: rgb(50, 152, 165);
+                clip-path: inset(50% 0 0 0);
+            }
+            .upScreenButtonThree{
+                height : 72px;
+                width : 72px;
+                background-color: white;
+            }
+            .upScreenButtonFour{
+                height : 50px;
+                width : 50px;
+                background-color: var(--border-color);
+            }
+            .upScreenButtonFive{
+                height : 44px;
+                width : 44px;
+                background-color: rgb(50, 152, 165);
+                .upScreenButtonShadow{
+                    height : 8px;
+                    width : 8px;
+                    background-color: white;
+                    position:absolute;
+                    border-radius: 5px;
+                    top : 8px;
+                    left : 8px;
+                    clip-path: ellipse(38% 50% at 50% 50%);
+                    rotate:40deg
+                }
+            }
+        }
+        .upScreenPolygon{
+            position : absolute;
+            bottom : 0;
+            height : 150px;
+            width : 100%;
+            background-color: var(--border-color);
+            clip-path: polygon(0 92%, 39% 92%, 63% 32%, 100% 32%, 100% 40%, 64% 40%, 40% 100%, 0 100%);
+        }
+        .topButtons{
+            display: flex;
+            justify-content: end;
+            gap : 3px;
+            padding: 20px 20px 10px 5px;
+            position : absolute;
+            top : -8px;
+            right : 0;
+            .topButton{
+                height : 20px;
+                width : 20px;
+                border-radius: 20px;
+                border : 2.5px solid var(--border-color);
+                position : relative;
+                .topButtonShadow{
+                    height : 5px;
+                    width : 5px;
+                    background-color: white;
+                    position:absolute;
+                    border-radius: 5px;
+                    top : 3px;
+                    left : 3px;
+                    clip-path: ellipse(38% 50% at 50% 50%);
+                    rotate:40deg;
+                }
+            }
+            .topButtonOne{
+            background-color: red;
+            }
+            .topButtonTwo{
+            background-color: yellow;
+            }
+            .topButtonThree{
+            background-color: green;
+            }
+        }
+    }
+    
+    .screen{
+        margin : 20px 0 20px 0;
+        border-right : solid rgba(57, 18, 36, 0.85) 5px;
+        border-bottom: solid rgba(57, 18, 36, 0.85) 5px;
+        border-radius: 23px;
+        width : 60%;
+        min-width : 280px;
+        .screenElements{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            background-color: white;
+            position : relative;
+            border-radius: 20px;
+            padding : 5px;
+            .screenUpButtons{
+                margin : 0px 0px 5px 0px;
+                display: flex;
+                justify-content: center;
+                gap : 1px;
+                .screenUpButtonOne, .screenUpButtonTwo{
+                    height : 10px;
+                    width : 10px;
+                    border-radius: 20px;
+                    border : 2px solid var(--border-color);
+                    background-color: red;
+                    position : relative;
+                    .screenUpButtonShadow{
+                    height : 3.5px;
+                    width : 3.5px;
+                    background-color: white;
+                    position:absolute;
+                    border-radius: 5px;
+                    top : 1px;
+                    left : 1px;
+                    clip-path: ellipse(38% 50% at 50% 50%);
+                    rotate:40deg;
+                    }
+                }
+            }
+            .screenBackground{
+                width :100%;
+                height: 230px;
+                background-color: var(--screen-color);
+                border-radius: 3px;
+                .screenLoaded{
+                    width : 100%;
+                    height : 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    flex-direction: column;
+                    align-items: center;
+                    img{
+                        width : auto;
+                        height : 70%;
+                    }
+                    .infos{
+                        width : 80%;
+                        margin-bottom : 5px;
+                        text-align: center;
+                        .pokeName{
+                            text-transform: capitalize;
+                        }
+                        .pokeType{
+                            display: flex;
+                            justify-content: center;
+                            gap : 5px;
+                            span{
+                                text-transform: capitalize;
+                            }
+                        }
+                    }
+                }
+            }
+            .screenDown{
+                display: flex;
+                flex-direction: column;
+                width : 30%;
+                margin : 5px 5px 2px auto;
+                gap : 3px;
+                .screenDownButtons{
+                    height : 6px;
+                    width: 100%;
+                    background-color: var(--select-color);
+                    border-radius: 5px;
+                }
+            }
+        }
+    }
+}
+
+.lines{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 10px;
+    .contrastLineOne{
+        height : 4px;
+        background-color: var(--border-color);
+        opacity : 0.2
+    }
+    .contrastLineTwo{
+        height : 4px;
+        background-color: var(--border-color);
+        opacity : 0.35
+    }
+    .yellowLine{
+        height : 5px;
+        background-color: yellow;
+        opacity : 0.55;
+    }
+    .borderLine{
+        height : 10px;
+        background-color: var(--border-color);
+        opacity : 0.85;
+    }
+}
+
+.bottomPokedex{
+    padding : 0px 20px;
+    display : flex;
+    flex-direction: column;
+    gap : 30px;
+    .bottomScreen{
+        position : relative;
+        .input_zone{
+            width : 100%;
+            border-style: none;
+            height : 70px;
+            text-align: center;
+            font-size: 22px;
+            border-radius: 20px;
+            background-color: rgba(12, 26, 87);
+            color : white;
+            border-top : 5px solid rgba(3, 5, 79);
+            border-right : 5px solid rgba(3, 5, 79);
+            position : relative;
+            text-transform: uppercase;
+        }
+        .input_zone:focus{
+            outline: none;
+        }
+        .shadow{
+            position : absolute;
+            top: 5px;
+            opacity : 0.5;
+            background-color: var(--shadow-color);
+            height : calc(100% - 5px)
+        }
+        .one{
+            clip-path: polygon(35% 0, 100% 0%, 65% 100%, 0% 100%);
+            width : 30%;
+            left : 55px;
+        }
+        .two{
+            clip-path: polygon(79% 0, 100% 0%, 24% 100%, 0% 100%);
+            width : 15%;
+            left : 205px;
+        }
+        .three{
+            clip-path: polygon(55% 0, 100% 0%, 45% 100%, 0% 100%);
+            width : 20%;
+            left : 305px;
+        }
+    }
+    .bottomKeyboard{
+        display : grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap : 2px;
+        height : 150px;
+        width : 100%;
+        background-color: gray;
+        border: 2px solid gray;
+        border-radius : 2px;
+        .keyboardButton{
+            border-style: none;
+            cursor : pointer;
+            font-size: 24px;
+            background-color: rgba(2, 169, 250);
+            color : white;
+            border-radius : 2px;
+            border-top : 5px solid rgba(38, 197, 255);
+            border-right : 5px solid rgba(0, 148, 221);
+            border-left : 5px solid rgba(0, 148, 221);
+            border-bottom: 5px solid rgba(1, 148, 218);
+        }
+    }
+    .bottomButtons{
+        display: flex;
+        justify-content: space-between;
+        .bottomButtonsLeft{
+            display : flex;
+            gap : 10px;
+            button{
+                border-style: none;
+                background-color: white;
+                height : auto;
+                padding: 10px 30px 12px 30px;
+                font-size: 14px;
+                font-weight: 700;
+                color : rgb(33, 3, 43);
+                text-transform: uppercase;
+                border-bottom : 4px solid rgba(48, 5, 61);
+                border-right : 4px solid rgba(48, 5, 61);
+                border-radius: 9px;
+                cursor: pointer;
+            }
+        }
+        .bottomButtonRight{
+            .upScreenButton{
+                height : 100%;
+                width : 100%;
+                scale : 0.7;
+                transform : translateX(-50px);
+                position : relative;
+                .upScreenButtonOne,.upScreenButtonTwo,.upScreenButtonThree,.upScreenButtonFour,.upScreenButtonFive{
+                    position : absolute;
+                    top : 50%;
+                    left : 50%;
+                    transform : translate(-50%, -50%);
+                    border-radius: 50px;
+                }
+                .upScreenButtonOne{
+                    height : 80px;
+                    width : 80px;
+                    background-color: white;
+                }
+                .upScreenButtonTwo{
+                    height : 80px;
+                    width : 80px;
+                    background-color: rgb(168, 166, 29);
+                    clip-path: inset(50% 0 0 0);
+                }
+                .upScreenButtonThree{
+                    height : 72px;
+                    width : 72px;
+                    background-color: white;
+                }
+                .upScreenButtonFour{
+                    height : 50px;
+                    width : 50px;
+                    background-color: var(--border-color);
+                }
+                .upScreenButtonFive{
+                    height : 44px;
+                    width : 44px;
+                    background-color: rgb(255, 234, 92);
+                    .upScreenButtonShadow{
+                        height : 8px;
+                        width : 8px;
+                        background-color: white;
+                        position:absolute;
+                        border-radius: 5px;
+                        top : 8px;
+                        left : 8px;
+                        clip-path: ellipse(38% 50% at 50% 50%);
+                        rotate:40deg;
+                        border : 1px black solid;
+                    }
+                }
+            }
+        }
+    }
+    .bottomNav{
+        display: flex;
+        justify-content: space-around;
+        gap : 20px;
+        button{
+            width : 100%;
+            height : 40px;
+            border-style: none;
+            border-radius: 5px;
+            background-color: rgba(15, 26, 82);
+            color : white;
+            font-size: 16px;
+            text-transform: uppercase;
+            opacity : 0.95;
+            cursor:pointer;
+            border-bottom : 3px solid rgba(3, 5, 79);
+            border-right : 3px solid rgba(3, 5, 79);
+        }
+    }
+}
