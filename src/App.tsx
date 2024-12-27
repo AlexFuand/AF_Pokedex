@@ -3,7 +3,7 @@ import './styles.scss';
 
 const App: React.FC = () => {
    const [searchParam, setSearchParam] = useState<number | string>();
-   const [search, setSearch] = useState<number | string>();
+   const [search, setSearch] = useState<number | string>('');
    const [pokeName, setPokeName] = useState<string>('');
    const [pokeNumber, setPokeNumber] = useState<number | undefined>();
    const [pokeTypes, setPokeTypes] = useState([]);
@@ -47,7 +47,7 @@ const App: React.FC = () => {
    }
    console.log(search)
    const addKeyboardValue = (value: string |number) => {
-      (value === 0 && (search===undefined || search === "" ))
+      (value === 0 && (search === undefined || search === "" ))
       ? setSearch('') 
       : setSearch(search + value.toString());
    } 
