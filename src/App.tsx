@@ -45,9 +45,11 @@ const App: React.FC = () => {
    const previous = () => {
       setSearchParam(pokeNumber - 1);
    }
-
+   console.log(search)
    const addKeyboardValue = (value: string |number) => {
-      value === 0 ? setSearch('') : search ? setSearch(search + value.toString()) : setSearch(value.toString());
+      (value === 0 && (search===undefined || search === "" ))
+      ? setSearch('') 
+      : setSearch(search + value.toString());
    } 
    
  return (
